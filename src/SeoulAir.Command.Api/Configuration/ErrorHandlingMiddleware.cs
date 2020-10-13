@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SeoulAir.Command.Domain.Extensions;
 using System;
 using System.Net;
 using System.Text.Json;
@@ -60,13 +61,15 @@ namespace SeoulAir.Command.Api.Configuration
                     code = HttpStatusCode.InternalServerError;
                     type = InternalServerErrorUri;
                     title = InternalServerErrorTitle;
-                    _logger.LogError(exception.ToString());
+                    _logger.LogError(exception.ToString()
+                        .FormatAsExceptionMessage());
                     break;
                 default:
                     code = HttpStatusCode.NotImplemented;
                     type = ConflictUri;
                     title = ConflictTitle;
-                    _logger.LogError(exception.ToString());
+                    _logger.LogError(exception.ToString()
+                        .FormatAsExceptionMessage());
                     break;
             }
 
