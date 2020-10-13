@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SeoulAir.Command.Domain.Resources
+﻿namespace SeoulAir.Command.Domain.Resources
 {
     public static class Strings
     {
@@ -27,5 +23,15 @@ namespace SeoulAir.Command.Domain.Resources
 
         #endregion
 
+        #region Mqtt Sending\Recieving
+
+        public const string MqttSenderClientId = "seoul-air-command-notification-sender";
+        public const string InvalidTopicValueMessage = "Topic must not be null or empty string.";
+        public const string MqttSenderStartingMessage = "Mqtt {0} sending service is running in the background";
+
+        #endregion
+
+        public const string ParameterNullOrEmptyMessage = "Parameter {0} must not be null or empty string.";
+        public const string ParameterBetweenMessage = "Value of parameter {0} must be between {1} and {2}.";
     }
 }
