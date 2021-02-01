@@ -29,11 +29,6 @@ namespace SeoulAir.Command.Api.Configuration.Extensions
 
         public static IServiceCollection AddApplicationSettings(this IServiceCollection services, IConfiguration configuration)
         {
-            services.Configure<MqttNotificationsConnectionOptions>(
-                configuration.GetSection(MqttNotificationsConnectionOptions.AppSettingsPath));
-            services.AddSingleton<IValidateOptions<MqttNotificationsConnectionOptions>,
-                MqttNotificationsConnectionOptionsValidator>();
-
             return services;
         }
     }

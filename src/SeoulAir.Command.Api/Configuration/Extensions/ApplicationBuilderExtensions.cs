@@ -17,7 +17,6 @@ namespace SeoulAir.Command.Api.Configuration.Extensions
             });
 
             return app;
-
         }
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using SeoulAir.Command.Api.Configuration;
 using SeoulAir.Command.Api.Configuration.Extensions;
 
-namespace SeoulAir.Api
+namespace SeoulAir.Command.Api
 {
     public class Startup
     {
