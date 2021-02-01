@@ -23,15 +23,15 @@
 
         #endregion
 
-        #region Mqtt Sending\Recieving
-
-        public const string MqttSenderClientId = "seoul-air-command-notification-sender";
-        public const string InvalidTopicValueMessage = "Topic must not be null or empty string.";
-        public const string MqttSenderStartingMessage = "Mqtt {0} sending service is running in the background";
-
-        #endregion
-
+        #region Errors and warnings messages
+        
         public const string ParameterNullOrEmptyMessage = "Parameter {0} must not be null or empty string.";
         public const string ParameterBetweenMessage = "Value of parameter {0} must be between {1} and {2}.";
+        public const string PaginationOrderError = "Pagination error. Invalid \"Order By\" option: {0}";
+        public const string PaginationFilterError = "Pagination error. Invalid \"Filter by\" option: {0}";
+        public const string InvalidParameterValueMessage = "Value of parameter {0} has invalid value.";
+        public const string RequestBodyGetException = "Http method GET does not support request body.";
+
+        #endregion
     }
 }
