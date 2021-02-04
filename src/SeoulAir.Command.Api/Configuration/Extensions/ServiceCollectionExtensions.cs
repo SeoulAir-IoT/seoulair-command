@@ -1,9 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using SeoulAir.Command.Domain.Options;
-using SeoulAir.Command.Domain.Services.OptionsValidators;
 using static SeoulAir.Command.Domain.Resources.Strings;
 
 namespace SeoulAir.Command.Api.Configuration.Extensions
@@ -24,11 +20,6 @@ namespace SeoulAir.Command.Api.Configuration.Extensions
                 });
             });
 
-            return services;
-        }
-
-        public static IServiceCollection AddApplicationSettings(this IServiceCollection services, IConfiguration configuration)
-        {
             return services;
         }
     }

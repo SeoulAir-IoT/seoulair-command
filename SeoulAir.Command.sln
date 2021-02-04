@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoulAir.Command.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoulAir.Command.Domain.Services", "src\SeoulAir.Command.Domain.Services\SeoulAir.Command.Domain.Services.csproj", "{F4D016AE-EF39-46CA-9745-C4F37F260A41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeoulAir.Command.Repositories", "src\SeoulAir.Command.Repositories\SeoulAir.Command.Repositories.csproj", "{6658E65E-CAC1-4F02-9BF9-90A34560F838}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F4D016AE-EF39-46CA-9745-C4F37F260A41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4D016AE-EF39-46CA-9745-C4F37F260A41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4D016AE-EF39-46CA-9745-C4F37F260A41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6658E65E-CAC1-4F02-9BF9-90A34560F838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6658E65E-CAC1-4F02-9BF9-90A34560F838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6658E65E-CAC1-4F02-9BF9-90A34560F838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6658E65E-CAC1-4F02-9BF9-90A34560F838}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

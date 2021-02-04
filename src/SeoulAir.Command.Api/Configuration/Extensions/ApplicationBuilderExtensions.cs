@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using static SeoulAir.Command.Domain.Resources.Strings;
 
 namespace SeoulAir.Command.Api.Configuration.Extensions
@@ -17,6 +18,12 @@ namespace SeoulAir.Command.Api.Configuration.Extensions
             });
 
             return app;
+        }
+        
+        public static void EnsureMigrationOfContext<T>(this IApplicationBuilder app) where T : DbContext
+        {
+            var context = app.ApplicationServices.GetService(typeof(T));
+            (context as T)?.Database.Migrate();
         }
     }
 }

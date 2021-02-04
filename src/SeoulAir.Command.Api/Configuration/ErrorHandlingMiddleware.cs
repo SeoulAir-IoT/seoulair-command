@@ -66,8 +66,8 @@ namespace SeoulAir.Command.Api.Configuration
                     break;
                 default:
                     code = HttpStatusCode.NotImplemented;
-                    type = ConflictUri;
-                    title = ConflictTitle;
+                    type = NotImplementedUri;
+                    title = NotImplementedTitle;
                     _logger.LogError(exception.ToString()
                         .FormatAsExceptionMessage());
                     break;
