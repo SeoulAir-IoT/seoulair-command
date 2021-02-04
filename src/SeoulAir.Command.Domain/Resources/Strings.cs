@@ -17,9 +17,9 @@
         #region Exception Middleware Handler
 
         public const string InternalServerErrorUri = "https://tools.ietf.org/html/rfc7231#section-6.6.1";
-        public const string ConflictUri = "https://tools.ietf.org/html/rfc7231#section-6.5.8";
+        public const string NotImplementedUri = "https://tools.ietf.org/html/rfc7231#section-6.6.2";
         public const string InternalServerErrorTitle = "500 Internal Server Error.";
-        public const string ConflictTitle = "409 Conflict.";
+        public const string NotImplementedTitle = "501 Not Implemented.";
 
         #endregion
 
