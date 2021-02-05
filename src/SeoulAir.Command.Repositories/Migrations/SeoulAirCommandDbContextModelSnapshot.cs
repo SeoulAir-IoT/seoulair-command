@@ -55,7 +55,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("f0181c30-b016-4918-abbc-a55578224186"),
                             Address = "seoulair-device",
-                            Controller = "AirQualitySensor",
+                            Controller = "api/AirQualitySensor",
                             Endpoint = "TurnOn",
                             HttpMethod = "PUT",
                             Name = "sensor-on",
@@ -66,7 +66,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("4f505368-6e4b-4421-a08e-6e7f5af9cd8f"),
                             Address = "seoulair-device",
-                            Controller = "AirQualitySensor",
+                            Controller = "api/AirQualitySensor",
                             Endpoint = "TurnOff",
                             HttpMethod = "PUT",
                             Name = "sensor-off",
@@ -77,7 +77,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("5b4dec30-8fae-457b-8fbe-1f22cea79f2a"),
                             Address = "seoulair-device",
-                            Controller = "AirQualitySensor",
+                            Controller = "api/AirQualitySensor",
                             Endpoint = "IsOn",
                             HttpMethod = "GET",
                             Name = "sensor-status",
@@ -88,7 +88,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("077ee73c-83f1-410d-b684-8faa0f2f95fe"),
                             Address = "seoulair-device",
-                            Controller = "SignalLight",
+                            Controller = "api/SignalLight",
                             Endpoint = "IsOn",
                             HttpMethod = "GET",
                             Name = "signal-light-status",
@@ -99,7 +99,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("628f6831-27ce-4f78-8074-e5f5f84b2077"),
                             Address = "seoulair-device",
-                            Controller = "SignalLight",
+                            Controller = "api/SignalLight",
                             Endpoint = "TurnOn",
                             HttpMethod = "PUT",
                             Name = "signal-light-on",
@@ -110,7 +110,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("5ed2ea37-111b-47d6-95a8-dcda5353f398"),
                             Address = "seoulair-device",
-                            Controller = "SignalLight",
+                            Controller = "api/SignalLight",
                             Endpoint = "TurnOff",
                             HttpMethod = "PUT",
                             Name = "signal-light-off",
@@ -121,7 +121,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("b256af9b-0b1d-4739-8c62-be90465fb7d5"),
                             Address = "seoulair-device",
-                            Controller = "SignalLight",
+                            Controller = "api/SignalLight",
                             Endpoint = "ActiveColor",
                             HttpMethod = "PUT",
                             Name = "change-light-color",
@@ -132,7 +132,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("b6cef9a9-ccd2-455a-a4be-6c987671af22"),
                             Address = "seoulair-data",
-                            Controller = "Actuator",
+                            Controller = "api/Actuator",
                             Endpoint = "IsOn",
                             HttpMethod = "GET",
                             Name = "data-status",
@@ -143,7 +143,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("d6a05a61-b36b-4780-b611-2b7bba0c33b8"),
                             Address = "seoulair-data",
-                            Controller = "Actuator",
+                            Controller = "api/Actuator",
                             Endpoint = "TurnOn",
                             HttpMethod = "PUT",
                             Name = "data-on",
@@ -154,7 +154,7 @@ namespace SeoulAir.Command.Repositories.Migrations
                         {
                             Id = new Guid("fa390861-00ba-4783-b94a-b9b84ffffad1"),
                             Address = "seoulair-data",
-                            Controller = "Actuator",
+                            Controller = "api/Actuator",
                             Endpoint = "TurnOff",
                             HttpMethod = "PUT",
                             Name = "data-off",

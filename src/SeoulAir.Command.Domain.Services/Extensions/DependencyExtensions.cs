@@ -10,9 +10,12 @@ namespace SeoulAir.Command.Domain.Services.Extensions
     {
         public static IServiceCollection AddDomainServices(this IServiceCollection services)
         {
+            services.AddHttpClient();
+            
             services.AddScoped<IMicroserviceHttpRequestBuilder, MicroserviceHttpRequestBuilder>();
             services.AddScoped<IMicroserviceUriBuilder, MicroserviceUriBuilder>();
             services.AddScoped<ICommandService, CommandService>();
+            services.AddScoped<IExecutionerService, ExecutionerService>();
             return services;
         }
     }
