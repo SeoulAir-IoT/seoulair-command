@@ -40,9 +40,21 @@ namespace SeoulAir.Command.Repositories.Extensions
             var filterProperty =
                 orderBy.Split('.').Aggregate<string, Expression>(filterParam, Expression.PropertyOrField);
 
-            var propertyLambda = Expression.Lambda<Func<TEntity, object>>(filterProperty, filterParam);
-
-            return isDescending ? queryable.OrderByDescending(propertyLambda) : queryable.OrderBy(propertyLambda);
+            return isDescending
+                ? (IOrderedQueryable<TEntity>) queryable.Provider.CreateQuery(
+                    Expression.Call(
+                        typeof(Queryable),
+                        "OrderByDescending",
+                        new[] {typeof(TEntity), filterProperty.Type},
+                        queryable.Expression,
+                        Expression.Lambda(filterProperty, filterParam)))
+                : (IOrderedQueryable<TEntity>) queryable.Provider.CreateQuery(
+                    Expression.Call(
+                        typeof(Queryable),
+                        "OrderBy",
+                        new[] {typeof(TEntity), filterProperty.Type},
+                        queryable.Expression,
+                        Expression.Lambda(filterProperty, filterParam)));
         }
     }
 }

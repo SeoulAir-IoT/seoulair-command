@@ -10,7 +10,7 @@
         public const string OpenApiInfoDescription
             = "SeoulAir Command is microservice that is part of SeoulAir project.\n" +
             "For more documentation visit: URI";
-        public const string SwaggerEndpoint = "/swagger/v1/swagger.json";
+        public const string SwaggerEndpoint = "/swagger/{0}/swagger.json";
 
         #endregion
 

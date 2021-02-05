@@ -12,7 +12,8 @@ namespace SeoulAir.Command.Api.Configuration.Extensions
 
             app.UseSwaggerUI(config =>
             {
-                config.SwaggerEndpoint(SwaggerEndpoint, OpenApiInfoProjectName);
+                config.SwaggerEndpoint(string.Format(SwaggerEndpoint, OpenApiInfoProjectVersion),
+                    OpenApiInfoProjectName);
                 config.RoutePrefix = string.Empty;
                 config.DocumentTitle = OpenApiInfoTitle;
             });
