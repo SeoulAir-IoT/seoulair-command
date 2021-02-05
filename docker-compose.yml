@@ -13,6 +13,8 @@ services:
       - 5800:5800
     links:
       - seoulair-command-db
+    external_links:
+      - seoulair-device
   
   seoulair-command-db:
     container_name: seoulair-command-db
