@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  seoulair-command:
+    container_name: seoulair-command
+    image: seoulair-command
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    network_mode: bridge
+    ports:
+      - 5800:5800
+    links:
+      - seoulair-command-db
+  
+  seoulair-command-db:
+    container_name: seoulair-command-db
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    network_mode: bridge
+    environment:
+      SA_PASSWORD: "5QXv4AAYNp54"
+      ACCEPT_EULA: "Y"
+    ports:
+      - 5801:1433
