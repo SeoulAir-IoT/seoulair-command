@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 ﻿using System;
 using System.IO;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
-=======
-﻿using Microsoft.Extensions.DependencyInjection;
->>>>>>> master
 using Microsoft.OpenApi.Models;
 using static SeoulAir.Command.Domain.Resources.Strings;
 
