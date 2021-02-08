@@ -6,6 +6,7 @@ using SeoulAir.Command.Domain.Dtos;
 using SeoulAir.Command.Domain.Interfaces.Repositories;
 using SeoulAir.Command.Domain.Interfaces.Services;
 using SeoulAir.Command.Domain.Options;
+using static SeoulAir.Command.Domain.Resources.Strings;
 
 namespace SeoulAir.Command.Domain.Services
 {
@@ -30,7 +31,7 @@ namespace SeoulAir.Command.Domain.Services
             var commandToExecute = await _commandRepository.FindByNameAsync(request.CommandName);
 
             if (commandToExecute == default)
-                throw new ArgumentException("Command with this name does not exist");
+                throw new ArgumentException(CommandDoesNotExistException);
 
             var uri = _uriBuilder.Restart()
                 .UseMicroserviceUrlOptions(new MicroserviceUrlOptions
@@ -48,9 +49,8 @@ namespace SeoulAir.Command.Domain.Services
                 .UseUri(uri.Build())
                 .Build();
 
-            HttpResponseMessage response;
-            using (var client = _clientFactory.CreateClient())
-                response = await client.SendAsync(httpRequest);
+            using var client = _clientFactory.CreateClient();
+            var response = await client.SendAsync(httpRequest);
 
             return response;
         }

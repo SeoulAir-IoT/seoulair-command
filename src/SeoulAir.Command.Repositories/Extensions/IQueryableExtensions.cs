@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -10,7 +9,7 @@ using SeoulAir.Command.Repositories.Entities;
 
 namespace SeoulAir.Command.Repositories.Extensions
 {
-    public static class IQueryableExtensions
+    public static class QueryableExtensions
     {
         public static async Task<PaginatedResultDto<TDto>> GetPaginatedAsync<TDto, TEntity>(
             this IQueryable<TEntity> queryable, Paginator paginator, IMapper mapper)
@@ -32,7 +31,7 @@ namespace SeoulAir.Command.Repositories.Extensions
             };
         }
 
-        public static IOrderedQueryable<TEntity> OrderBy<TEntity>(this IQueryable<TEntity> queryable,
+        private static IOrderedQueryable<TEntity> OrderBy<TEntity>(this IQueryable<TEntity> queryable,
             string orderBy, bool isDescending)
             where TEntity : BaseEntityWithId
         {

@@ -5,7 +5,11 @@ using SeoulAir.Command.Domain.Interfaces.Services;
 
 namespace SeoulAir.Command.Api.Controllers
 {
+    /// <summary>
+    /// Acts as console input to execute command provided by this microservice.
+    /// </summary>
     [ApiController]
+    [Route("/api/[controller]")]
     public class ExecutionerController : ControllerBase
     {
         private readonly IExecutionerService _executionerService;
@@ -15,6 +19,10 @@ namespace SeoulAir.Command.Api.Controllers
             _executionerService = executionerService;
         }
 
+        /// <summary>
+        /// Executes the command.
+        /// </summary>
+        /// <param name="request">Request with execution parameters. Command name from database and it's parameters</param>
         [HttpPut("execute")]
         public async Task<IActionResult> Execute(ExecutionRequest request)
         {

@@ -7,11 +7,8 @@ namespace SeoulAir.Command.Repositories.Extensions
 {
     public static class DependencyInjectionExtensions
     {
-        public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddDbContext<SeoulAirCommandDbContext>(
-                builder => builder.UseSqlServer(configuration.GetConnectionString("CommandDatabase")));
-            
             services.AddScoped<ICommandRepository, CommandRepository>();
             return services;
         }

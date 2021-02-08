@@ -6,7 +6,7 @@
 
         public const string OpenApiInfoProjectName = "SeoulAir.Command API";
         public const string OpenApiInfoTitle = "SeoulAir Command microservice.";
-        public const string OpenApiInfoProjectVersion = "1.0";
+        public const string OpenApiInfoProjectVersion = "1.0.0";
         public const string OpenApiInfoDescription
             = "SeoulAir Command is microservice that is part of SeoulAir project.\n" +
             "For more documentation visit: URI";
@@ -31,6 +31,7 @@
         public const string PaginationFilterError = "Pagination error. Invalid \"Filter by\" option: {0}";
         public const string InvalidParameterValueMessage = "Value of parameter {0} has invalid value.";
         public const string RequestBodyGetException = "Http method GET does not support request body.";
+        public const string CommandDoesNotExistException = "Command with this name does not exist.";
 
         #endregion
     }
