@@ -25,7 +25,7 @@ namespace SeoulAir.Command.Domain.Services
             return await _commandRepository.FindByNameAsync(name);
         }
 
-        public async Task<CommandDto> AddAsync(CommandDto course)
+        public async Task<string> AddAsync(CommandDto course)
         {
             return await _commandRepository.AddAsync(course);
         }

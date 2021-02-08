@@ -33,7 +33,7 @@ namespace SeoulAir.Command.Repositories
             return _mapper.Map<CommandDto>(await result.FirstOrDefaultAsync());
         }
 
-        public async Task<CommandDto> AddAsync(CommandDto course)
+        public async Task<string> AddAsync(CommandDto course)
         {
             Entities.Command entity = _mapper.Map<Entities.Command>(course);
             entity.Id = Guid.NewGuid();
@@ -41,7 +41,7 @@ namespace SeoulAir.Command.Repositories
             await _commands.AddAsync(entity);
             await _dbContext.SaveChangesAsync();
             
-            return _mapper.Map<CommandDto>(entity);
+            return entity.Id.ToString();
         }
 
         public async Task DeleteAsync(Guid id)

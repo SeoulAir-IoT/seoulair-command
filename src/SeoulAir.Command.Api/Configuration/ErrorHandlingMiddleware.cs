@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SeoulAir.Command.Domain.Extensions;
 using System;
 using System.Net;
 using System.Text.Json;
@@ -57,19 +56,17 @@ namespace SeoulAir.Command.Api.Configuration
 
             switch (exception)
             {
-                case ArgumentException argumentException:
+                case ArgumentException _:
                     code = HttpStatusCode.InternalServerError;
                     type = InternalServerErrorUri;
                     title = InternalServerErrorTitle;
-                    _logger.LogError(exception.ToString()
-                        .FormatAsExceptionMessage());
+                    _logger.LogError(exception.ToString());
                     break;
                 default:
                     code = HttpStatusCode.NotImplemented;
                     type = NotImplementedUri;
                     title = NotImplementedTitle;
-                    _logger.LogError(exception.ToString()
-                        .FormatAsExceptionMessage());
+                    _logger.LogError(exception.ToString());
                     break;
             }
 

@@ -1,6 +1,6 @@
-using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,15 +19,18 @@ namespace SeoulAir.Command.Api
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            services.AddDbContext<SeoulAirCommandDbContext>(
+                builder => builder.UseSqlServer(Configuration.GetConnectionString("CommandDatabase")));
 
             services.AddDomainServices();
 
-            services.AddRepositories(Configuration);
+            services.AddRepositories();
             
             services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
@@ -43,8 +46,6 @@ namespace SeoulAir.Command.Api
 
             app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthorization();
@@ -57,7 +58,6 @@ namespace SeoulAir.Command.Api
             {
                 endpoints.MapControllers();
             });
-
         }
     }
 }

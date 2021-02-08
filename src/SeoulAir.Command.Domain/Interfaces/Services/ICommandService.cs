@@ -8,7 +8,7 @@ namespace SeoulAir.Command.Domain.Interfaces.Services
     {
         Task<CommandDto> FindAsync(string id);
         Task<CommandDto> FindByNameAsync(string name);
-        Task<CommandDto> AddAsync(CommandDto course);
+        Task<string> AddAsync(CommandDto course);
         Task DeleteAsync(string id);
         Task<PaginatedResultDto<CommandDto>> GetPaginated(Paginator paginator);
         void Update(string id, CommandDto dto);
