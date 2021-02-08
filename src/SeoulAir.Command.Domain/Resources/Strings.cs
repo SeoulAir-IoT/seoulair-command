@@ -7,8 +7,8 @@
         public const string OpenApiInfoProjectName = "SeoulAir.Command API";
         public const string OpenApiInfoTitle = "SeoulAir Command microservice.";
         public const string OpenApiInfoProjectVersion = "1.0.0";
-        public const string OpenApiInfoDescription
-            = "SeoulAir Command is microservice that is part of SeoulAir project.\n" +
+        public const string OpenApiInfoDescription = 
+            "SeoulAir Command is microservice that is part of SeoulAir project.\n" +
             "For more documentation visit: URI";
         public const string SwaggerEndpoint = "/swagger/{0}/swagger.json";
         public const string GitlabContactName = "Gitlab Repository";

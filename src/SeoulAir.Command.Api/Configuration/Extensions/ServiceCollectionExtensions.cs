@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.IO;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+=======
+﻿using Microsoft.Extensions.DependencyInjection;
+>>>>>>> master
 using Microsoft.OpenApi.Models;
 using static SeoulAir.Command.Domain.Resources.Strings;
 
@@ -16,6 +20,7 @@ namespace SeoulAir.Command.Api.Configuration.Extensions
             {
                 var xmlDocumentationFileName = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlDocumentationFileName));
+
                 options.DescribeAllParametersInCamelCase();
                 options.SwaggerDoc(OpenApiInfoProjectVersion, new OpenApiInfo
                 {
