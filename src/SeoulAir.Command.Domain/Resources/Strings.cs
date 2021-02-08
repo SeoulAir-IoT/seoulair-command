@@ -11,6 +11,8 @@
             = "SeoulAir Command is microservice that is part of SeoulAir project.\n" +
             "For more documentation visit: URI";
         public const string SwaggerEndpoint = "/swagger/{0}/swagger.json";
+        public const string GitlabContactName = "Gitlab Repository";
+        public const string GitlabRepoUri = "http://gitlab.com/seoulair/seoulair-analytics.git";
 
         #endregion
 
